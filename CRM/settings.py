@@ -25,7 +25,7 @@ SECRET_KEY = 'sxg72j=tlz0fzvzq$-fap_-c6d@u7y3%!0vdl#e)+lh4s$b+r$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['crm-hero.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -126,3 +127,5 @@ STATICFILES_DIRS = [
 ]
 
 MEDIA_ROOT = Path(BASE_DIR, 'media/')
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'
